@@ -1,0 +1,35 @@
+_config:
+    _title: "The JavaScript Function Object"
+    _domains:
+        _default:
+            _shape: ellipse
+            _color: gold     # "#F3F781"
+        builtin:
+            _shape: ellipse
+            _color: "#a0ffa0"
+        normal:
+            _shape: ellipse
+            _color: "#a0a0ff"
+
+ObjProto:
+    _domain: builtin
+
+Object:
+    _domain: normal
+    _properties: [prototype]
+    _relations:
+        _proto_:
+            _target: ObjProto
+
+Dog:
+    _domain: normal
+    _properties: [legs, head, tail]
+    _relations:
+        prototype: 
+
+
+Function:
+    _domain: normal
+    _properties: [prototype]
+    _relations:
+        _proto_: Object

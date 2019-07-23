@@ -1,0 +1,27 @@
+<h2>Products</h2>
+<!-- <div *ngFor="let product of products">
+    <h2>Product Details</h2>
+
+    <div *ngIf="product">
+      <h3>{{ product.name }}</h3>
+      <h4>{{ product.price | currency }}</h4>
+      <p>{{ product.description }}</p>
+    
+      <button (click)="addToCart(product)">Buy</button>
+    </div>
+  
+  </div> -->
+
+  <div class="container mt-3">
+    <h2>Products</h2>
+  
+    <div class="d-flex mb-3" *ngFor="let product of products">
+      <div class="p-2 flex-fill bg-info">{{product.name}}</div>
+      <div class="p-2 flex-fill bg-warning">{{product.price}}</div>
+      <div class="p-2 flex-fill bg-primary">{{product.description}}</div>
+      <div class="p-2 flex-fill bg-info" (click)="onSelectedProuct(product)">Buy</div>
+    </div>
+
+    </div>
+<h2>Selected Product</h2>
+<input type="text" [(ngModel)]="selectedproduct" placeholder="name"/>

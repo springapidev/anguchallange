@@ -1,0 +1,26 @@
+digraph g {
+    graph [label="{{=it.title}}" splines=true overlap=false rankdir = "TB"];
+    ratio = auto;
+
+{{~ it.nodes :value:index}}
+"{{=value.name}}" [
+    shape="{{=value.shape}}",
+    style=filled,
+    fillcolor="{{=value.color}}"
+    label=<<table border="0" cellborder="0">
+            <tr><td align="center"><font point-size="12" color="#000000"><b>{{=value.name}}</b></font></td></tr>
+            <tr><td align="center">{{~ value.properties :pvalue:pindex}}<font point-size="8" color="#00008a">{{=pvalue}}</font><br/>{{~}}</td></tr>
+        </table>> ];
+{{~}}
+
+{{~ it.edges :edge:edgeIdx}}
+"{{=edge.from}}" -> "{{=edge.to}}" [
+taillabel="{{=edge.tailLabel}}" 
+headlabel="{{=edge.headLabel}}" 
+label=<<table border="0" cellborder="0">
+        <tr><td><font point-size="10"><i>{{=edge.relLabel}}</i></font></td></tr>
+        {{~ edge.properties :pvalue:pindex}}
+        <tr><td align="left"><font point-size="8" color="#00008a">{{=pvalue}}</font></td></tr>{{~}}</table>> ];
+        {{~}}
+
+}

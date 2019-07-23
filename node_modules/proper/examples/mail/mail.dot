@@ -1,0 +1,66 @@
+digraph g {
+    graph [label="A simple property graph" splines=true overlap=false rankdir = "TB"];
+    ratio = auto;
+
+
+"Email" [
+    shape="ellipse",
+    style=filled,
+    fillcolor="#a0a0ff"
+    label=<<table border="0" cellborder="0">
+            <tr><td align="center"><font point-size="12" color="#000000"><b>Email</b></font></td></tr>
+            <tr><td align="center"><font point-size="8" color="#00008a">content</font><br/></td></tr>
+        </table>> ];
+
+"Eva" [
+    shape="ellipse",
+    style=filled,
+    fillcolor="#a0ffa0"
+    label=<<table border="0" cellborder="0">
+            <tr><td align="center"><font point-size="12" color="#000000"><b>Eva</b></font></td></tr>
+            <tr><td align="center"></td></tr>
+        </table>> ];
+
+"Tom" [
+    shape="ellipse",
+    style=filled,
+    fillcolor="#a0ffa0"
+    label=<<table border="0" cellborder="0">
+            <tr><td align="center"><font point-size="12" color="#000000"><b>Tom</b></font></td></tr>
+            <tr><td align="center"></td></tr>
+        </table>> ];
+
+"Tunde" [
+    shape="ellipse",
+    style=filled,
+    fillcolor="#a0ffa0"
+    label=<<table border="0" cellborder="0">
+            <tr><td align="center"><font point-size="12" color="#000000"><b>Tunde</b></font></td></tr>
+            <tr><td align="center"></td></tr>
+        </table>> ];
+
+
+
+"Email" -> "Eva" [
+taillabel="" 
+headlabel="" 
+label=<<table border="0" cellborder="0">
+        <tr><td><font point-size="10"><i>to</i></font></td></tr>
+        </table>> ];
+        
+"Email" -> "Tom" [
+taillabel="" 
+headlabel="" 
+label=<<table border="0" cellborder="0">
+        <tr><td><font point-size="10"><i>from</i></font></td></tr>
+        </table>> ];
+        
+"Email" -> "Tunde" [
+taillabel="" 
+headlabel="" 
+label=<<table border="0" cellborder="0">
+        <tr><td><font point-size="10"><i>cc</i></font></td></tr>
+        </table>> ];
+        
+
+}

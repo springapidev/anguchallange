@@ -1,0 +1,15 @@
+preprocessors:
+    # - fileName: config.yml
+    #   fileType: /application/pgl-yaml
+
+    - fileName: mail.yml
+      fileType: /application/pgl-yaml
+
+processors: []
+
+postprocessors:
+    - fileName: mail.dot
+      fileType: /application/pgl-dot
+
+    - fileName: mail.md
+      fileType: /application/pgl-markdown

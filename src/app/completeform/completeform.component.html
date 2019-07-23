@@ -1,0 +1,62 @@
+<div class="container">
+    <div [hidden]="submitted" class="row">
+        <h1>student Form</h1>
+        <p>{{diagonistic}}</p>
+        <div class="col-12">
+            <form (ngSubmit)="onSubmit()" #studentData="ngForm">
+                <div class="form-group">
+                    <label for="fname">Name</label>
+                    <input class="form-control" type="text" [(ngModel)]="model.fname" name="fname" id="fname"
+                        />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" [(ngModel)]="model.email" name="email" id="email" />
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">birthDate</label>
+                    <input class="form-control" type="date" [(ngModel)]="model.birthDate" name="birthDate"
+                        id="birthDate" />
+                </div>
+
+                <div class="form-group">
+                        <label>birthDate</label>
+                        <input class="form-radio" type="radio" value="m" [(ngModel)]="model.gender" name="gender"
+                            />Male
+                            <input class="form-radio" type="radio" value="f" [(ngModel)]="model.gender" name="gender"
+                            />Female
+                    </div>
+                    <div class="form-group">
+                            <label for="country">Country</label>
+                            <select class="form-control" id="country"
+                            required
+                            [(ngModel)]="model.country" name="country"
+                            #power="ngModel">
+                                <option *ngFor="let con of countries" [value]="con">{{con}}</option>
+                            </select>
+                        </div>
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div [hidden]="!submitted" class="row">
+        <table class="table">
+            <thead >
+                <th *ngFor="let title of titles">{{title}}</th>
+           
+            </thead>
+            <tbody>
+                    <td>{{model.fname}}</td>
+                    <td>{{model.email}}</td>
+                    <td>{{model.birthDate}}</td>
+                    <td>{{model.gender}}</td>
+                    <td>{{model.country}}</td>
+                    <td>{{model.comments}}</td>
+                    <td>{{model.hobbies}}</td>
+            </tbody>
+        </table>
+    </div>
+</div>

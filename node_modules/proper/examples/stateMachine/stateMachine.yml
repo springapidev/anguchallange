@@ -1,0 +1,45 @@
+_config:
+    _title: stateMachine.yml
+    _domains:
+        _default:
+            _shape: ellipse
+            _color: gold     # "#F3F781"
+        terminal:
+            _shape: ellipse
+            _color: "#a444444"
+
+Reset:
+    _domain: terminal
+    _description: Reset the device
+    _relations:
+        setup:
+            _target: Setup
+
+Setup:
+    _relations:
+    _description: Initializes the device
+    _relations:
+        reset:
+            _target: Reset
+        wakeUp:
+            _target: Awake
+
+Awake:
+    _description: |
+        The device is awake, and can receive commands and send messages
+        through the serial communication channel
+    _properties: [goToSleepAt]
+    _relations:
+        goToSleep:
+            _target: Sleep
+        reset:
+            _target: Reset
+
+Sleep:
+    _description: Sleeps
+    _properties: [sleepingTime]
+    _relations:
+        reset:
+            _target: Reset
+        wakeUp:
+            _target: Awake

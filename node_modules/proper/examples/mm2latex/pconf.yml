@@ -1,0 +1,12 @@
+preprocessors:
+    # - fileName: config.yml
+    #   fileType: /application/pgl-yaml
+
+    - fileName: mm2latex.mm
+      fileType: /application/freemind
+
+processors: []
+
+postprocessors:
+    - fileName: mm2latex.latex
+      fileType: /application/x-latex

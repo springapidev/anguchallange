@@ -1,0 +1,30 @@
+_config:
+    _title: "A simple property graph"
+    _domains:
+        _default:
+            _shape: ellipse
+            _color: gold     # "#F3F781"
+        user:
+            _shape: ellipse
+            _color: "#a0ffa0"
+        data:
+            _shape: ellipse
+            _color: "#a0a0ff"
+
+Email:
+    _domain: data
+    _properties: [content]
+    _relations:
+        to:
+            _target: Eva
+        from:
+            _target: Tom
+        cc:
+            _target: Tunde
+
+Eva:
+    _domain: user
+Tom:
+    _domain: user
+Tunde:
+    _domain: user
